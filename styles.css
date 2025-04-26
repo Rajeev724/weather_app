@@ -1,0 +1,115 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Backgrounds for weather conditions */
+body {
+    min-height: 100vh;
+    background: linear-gradient(to bottom right, #87CEEB, #FFFAF0);
+    transition: background 0.5s ease;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Glass Effect */
+.glass-card {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    color: #fff;
+    transition: 0.4s ease;
+}
+
+.glass-small {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.hidden {
+    display: none;
+}
+
+/* Specific Weather Backgrounds */
+body.clear {
+    background: linear-gradient(to bottom right, #87CEEB, #FFFAF0);
+}
+body.cloudy {
+    background: linear-gradient(to bottom right, #778899, #B0C4DE);
+}
+body.rainy {
+    background: linear-gradient(to bottom right, #708090, #2F4F4F);
+    animation: rain 2s infinite linear;
+}
+@keyframes rain {
+    0% { background-position: 0 0; }
+    100% { background-position: 100% 100%; }
+}
+body.snow {
+    background: linear-gradient(to bottom right, #fff, #F0F8FF);
+}
+body.stormy {
+    background: linear-gradient(to bottom right, #2C3E50, #4B79A1);
+}
+
+/* Dark Mode */
+body.dark {
+    background: linear-gradient(to bottom right, #000000, #434343);
+}
+body.dark .glass-card {
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #f8f9fa;
+}
+body.dark .glass-small {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+/* Particle Background for Clear Weather */
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Rain Animation */
+.rain {
+    background-image: linear-gradient(transparent, rgba(255,255,255,0.5));
+    animation: rainAnimation 0.5s linear infinite;
+    pointer-events: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+@keyframes rainAnimation {
+    0% { background-position: 0 0; }
+    100% { background-position: 0 100px; }
+}
+
+/* Snow Animation */
+.snow {
+    background-image: url('https://cdn-icons-png.flaticon.com/512/414/414927.png');
+    background-repeat: repeat;
+    background-size: 50px 50px;
+    animation: snowAnimation 10s linear infinite;
+    pointer-events: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+@keyframes snowAnimation {
+    0% { background-position: 0 0; }
+    100% { background-position: 100px 600px; }
+}
