@@ -12,7 +12,15 @@ body {
     transition: background 0.5s ease;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-
+/* title color change  */
+.dashboard-title {
+    color: #0c0808;
+    transition: color 0.3s ease;
+  }
+  
+  body.dark .dashboard-title {
+    color: #fff;
+  }
 /* Glass Effect */
 .glass-card {
     background: rgba(255, 255, 255, 0.2);
@@ -20,7 +28,7 @@ body {
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border-radius: 20px;
-    color: #fff;
+    color: #000000;
     transition: 0.4s ease;
 }
 
@@ -113,3 +121,58 @@ body.dark .glass-small {
     0% { background-position: 0 0; }
     100% { background-position: 100px 600px; }
 }
+
+.footer-glass {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    color: #000000;
+    padding: 20px 10px;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    z-index: 5;
+  }
+  
+  .footer-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  @media (min-width: 600px) {
+    .footer-content {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+  
+  body.dark .footer-glass {
+    background: rgba(0, 0, 0, 0.3);
+    color: #eee;
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .input-group input::placeholder {
+    color: #aaa;
+  }
+  
+  .input-group input:focus {
+    outline: none;
+    box-shadow: none;
+  }
+  
+  #toggleDark {
+    transition: all 0.3s ease-in-out;
+  }
+  
+  #toggleDark:hover {
+    background-color: #444;
+    transform: rotate(15deg);
+  }
+  
